@@ -12,11 +12,11 @@ import MyImage from '../../assets/images/person1.png'
 
 function Index() {
 
-    const [collectedData, setcollectedData] = useState({})
+    // const [collectedData, setcollectedData] = useState({})
 
-    function saveData() {
+    // function saveData() {
 
-    }
+    // }
 
     return (
         <div>
