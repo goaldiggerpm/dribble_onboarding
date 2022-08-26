@@ -68,7 +68,7 @@ function StepperBar({ index }) {
             setMount(true);
             changeClassName(index)
         }
-    }, [index, mount])
+    }, [index, mount]) // eslint-disable-next-line
 
     return (
         <div className="stepper-wrapper">
