@@ -4,6 +4,8 @@ import StepperCircle from '../../atoms/StepperCircle/StepperCircle'
 
 function StepperBar({ index }) {
 
+    const [mount, setMount] = useState(false)
+
     const [classNames, setclassNames] = useState({
         class1: "completed nearactive",
         class2: " ",
@@ -11,7 +13,7 @@ function StepperBar({ index }) {
         class4: " "
     })
 
-    function changeClassName(index) {
+    const changeClassName = (index) => {
         switch (index) {
             case 1:
                 setclassNames({
@@ -62,8 +64,11 @@ function StepperBar({ index }) {
     }
 
     useEffect(() => {
-        changeClassName(index)
-    }, [index])
+        if (!mount) {
+            setMount(true);
+            changeClassName(index)
+        }
+    }, [index, mount])
 
     return (
         <div className="stepper-wrapper">
