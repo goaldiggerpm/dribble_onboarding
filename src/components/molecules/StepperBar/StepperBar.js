@@ -63,7 +63,7 @@ function StepperBar({ index }) {
         }
     }
 
-    useEffect(() => {
+    useEffect((index) => {
         if (!mount) {
             setMount(true);
             changeClassName(index)
