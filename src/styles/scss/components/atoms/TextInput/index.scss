@@ -1,0 +1,64 @@
+.textBoxHolder {
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid #000;
+
+
+    &.regular {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        max-width: fit-content;
+
+        border: 0px;
+
+        .textBox-regular {
+            height: 50px !important;
+            width: 361px;
+            border-width: 1px;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .textBox-regular:focus {
+            outline: none;
+        }
+
+    }
+
+    &.domain {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: fit-content;
+
+        .textBoxDomain {
+            padding: 10px;
+            background-color: blanchedalmond;
+            height: 30px;
+            max-width: 120px;
+            align-self: center;
+            text-align: center;
+            border-radius: 8px 0px 0px 8px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .textBox-domain {
+            padding: 10px;
+            width: 220px;
+            height: -webkit-fill-available;
+            border-width: 0px 0px 0px 1px;
+            border-radius: 0px 8px 8px 0px;
+            background-color: blanchedalmond;
+        }
+
+        .textBox-domain:focus {
+            outline: none;
+        }
+    }
+}

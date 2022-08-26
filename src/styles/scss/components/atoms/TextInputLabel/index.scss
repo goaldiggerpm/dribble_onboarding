@@ -1,0 +1,17 @@
+.labelBox {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .label {
+        font-size: 12px;
+        height: 10px;
+        max-width: 100px;
+        color: $color-black;
+        font-weight: 600;
+
+        &.blur {
+            color: $color-sub-black;
+        }
+    }
+}
