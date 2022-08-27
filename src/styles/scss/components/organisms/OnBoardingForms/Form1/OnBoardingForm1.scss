@@ -12,3 +12,13 @@
         max-width: 400px;
     }
 }
+
+
+@media screen and (max-width: 600px) {
+    .OnBoardingForm1-main-container {
+
+        .progress-wrapper {
+            max-width: 364px;
+        }
+    }
+}

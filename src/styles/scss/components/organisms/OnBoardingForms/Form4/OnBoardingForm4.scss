@@ -5,9 +5,20 @@
     padding-top: 50px;
     padding-bottom: 100px;
 
-    .progress-wrapper {display: flex;
+    .progress-wrapper {
+        display: flex;
         align-items: center;
         flex-direction: row;
         max-width: 400px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .OnBoardingForm4-main-container {
+
+        .progress-wrapper {
+            max-width: 364px;
+        }
     }
 }
