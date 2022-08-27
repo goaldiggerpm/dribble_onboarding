@@ -1,8 +1,11 @@
 .textBoxHolder {
     height: 50px;
     border-radius: 8px;
-    border: 1px solid #000;
+    border: 1px solid $color-grey;
 
+    input {
+        font-size: 16px;
+    }
 
     &.regular {
         display: flex;
@@ -11,18 +14,18 @@
         justify-content: center;
         max-width: fit-content;
 
-        border: 0px;
-
         .textBox-regular {
             height: 50px !important;
-            width: 361px;
-            border-width: 1px;
+            width: 380px;
             border-radius: 8px;
             padding: 10px;
+            border: 0.4px $color-grey;
         }
 
         .textBox-regular:focus {
             outline: none;
+            border: 1px solid $color-primary !important;
+            box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
         }
 
     }
@@ -37,7 +40,7 @@
 
         .textBoxDomain {
             padding: 10px;
-            background-color: blanchedalmond;
+            background-color: $color-light-grey;
             height: 30px;
             max-width: 120px;
             align-self: center;
@@ -50,15 +53,18 @@
 
         .textBox-domain {
             padding: 10px;
-            width: 220px;
+            width: 238px;
             height: -webkit-fill-available;
             border-width: 0px 0px 0px 1px;
             border-radius: 0px 8px 8px 0px;
-            background-color: blanchedalmond;
+            background-color: $color-white;
+            border-left-color: $color-grey;
         }
 
         .textBox-domain:focus {
             outline: none;
+            border: 1px solid $color-primary !important;
+            box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
         }
     }
 }

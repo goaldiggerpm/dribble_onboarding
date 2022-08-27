@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import MyButton from '../../components/atoms/Button/Button.js'
-import MyTitleLabel from '../../components/atoms/TitleLabel/TitleLabel.js'
-import MyTextChip from '../../components/atoms/CardChip/TextChip.js'
 
-// molecules 
-import MyInput from '../../components/molecules/InputBox/InputBox.js'
-import Progressbar from '../../components/molecules/StepperBar/StepperBar'
+// organisms 
 
-// image 
-import MyImage from '../../assets/images/person1.png'
+import OnBoardingForm1 from '../../components/organisms/OnBoardingForms/Form1/OnBoardingForm1'
+import OnBoardingForm2 from '../../components/organisms/OnBoardingForms/Form2/OnBoardingForm2'
+import OnBoardingForm3 from '../../components/organisms/OnBoardingForms/Form3/OnBoardingForm3'
+import OnBoardingForm4 from '../../components/organisms/OnBoardingForms/Form4/OnBoardingForm4'
+
 
 function Index() {
 
@@ -20,11 +18,10 @@ function Index() {
 
     return (
         <div>
-            <MyButton text={"Hii Pm"} />
-            <MyInput IBoption={true} IBlabelname={"Full name"} IBtype={"domain"} IBdomainname={"www.eden.com/"} IBplaceholdervalue={"Full name"} />
-            <MyTitleLabel heading={"Let's set up a home for all your work"} subheading={"you can always create another workspace later"} />
-            <MyTextChip icon={MyImage} headline={"For myself"} description={"Write better. Think more clearly. Stay organized"} />
-            <Progressbar index={1} />
+            <OnBoardingForm1 />
+            <OnBoardingForm2 />
+            <OnBoardingForm3 />
+            <OnBoardingForm4 />
         </div>
     )
 }

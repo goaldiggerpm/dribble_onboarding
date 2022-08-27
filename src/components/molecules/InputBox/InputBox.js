@@ -6,11 +6,12 @@ import InputText from '../../atoms/TextInput/TextInput'
 function InputBox({ IBtype, IBdomainname, IBoption, IBlabelname, IBplaceholdervalue }) {
 
   return (
-    <React.Fragment>
-      <Inputlabel option={IBoption} labelname={IBlabelname} />
-      <InputText type={IBtype} domainname={IBdomainname} placeholdervalue={IBplaceholdervalue} />
-    </React.Fragment>
-
+    <div className="inputbox-container"  >
+      <div className="inputbox-holder" >
+        <Inputlabel option={IBoption} labelname={IBlabelname} />
+        <InputText type={IBtype} domainname={IBdomainname} placeholdervalue={IBplaceholdervalue} />
+      </div>
+    </div>
   )
 }
 

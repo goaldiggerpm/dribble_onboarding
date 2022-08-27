@@ -1,0 +1,37 @@
+.chipHolder {
+    border: 1px solid $color-black;
+    max-width: 144px;
+    max-height: 144px;
+    padding: 18px;
+    border-radius: 8px;
+
+    border: 1px solid $color-grey;
+
+    .chip {
+
+        &.image {
+            width: 36px;
+        }
+
+        &.text {
+            max-width: 200px;
+
+            &.headline {
+                margin-top: 20px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            &.description {
+                margin-top: 12.8px;
+                font-size: 14px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.chipHolder:hover {
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border: 1px solid $color-primary;
+}

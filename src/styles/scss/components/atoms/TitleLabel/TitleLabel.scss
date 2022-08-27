@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+    margin-bottom: 46px;
 
     .title {
         text-align: center;
@@ -11,11 +12,14 @@
         &.heading {
             font-weight: 600;
             font-size: 32px;
+            letter-spacing: 0.082px;
         }
 
         &.subheading {
             font-weight: 300;
-            font-size: 18px;
+            font-size: 16px;
+            letter-spacing: -0.082px;
+            color: $color-grey;
         }
     }
 }
