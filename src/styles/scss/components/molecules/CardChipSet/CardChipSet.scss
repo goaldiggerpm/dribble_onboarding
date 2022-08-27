@@ -7,3 +7,10 @@
     margin-bottom: 20px;
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 600px) {
+    .cards-container {
+        max-width: 322px;
+    }
+}

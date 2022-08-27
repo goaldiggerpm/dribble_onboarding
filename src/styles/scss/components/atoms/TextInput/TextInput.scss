@@ -68,3 +68,32 @@
         }
     }
 }
+
+
+@media screen and (max-width: 600px) {
+    .textBoxHolder {
+
+        input {
+            font-size: 16px;
+        }
+
+        &.regular {
+
+            .textBox-regular {
+                width: 299px;
+            }
+
+        }
+
+        &.domain {
+
+            .textBoxDomain {
+                width: 120px;
+            }
+
+            .textBox-domain {
+                width: 158px;
+            }
+        }
+    }
+}
