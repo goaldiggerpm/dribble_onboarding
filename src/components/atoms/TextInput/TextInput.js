@@ -1,31 +1,61 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 /**
  * Button component (atom)
- * @param {string} type: specifies the button format i.e primary(default), secondary, tertiary
- * @param {string} mode: specifies the button mode i.e normal(" " as default), danger, disabled
- * @param {string} icon: string specifies the source of icon (optional)
- * @param {string} text: text to diplay on button (optional)
+ * @param {string} type: specifies the button format i.e regular(default), domain
+ * @param {string} domainname: text to display on input label 
+ * @param {string} placeholdervalue: text to display on input placeholder
  * @param {function} action: function to run on click of the button
- * @returns Custom button with passed properties
+ * @returns Custom TextInput with passed properties
  */
-function TextInput({ type, domainname, placeholdervalue, }) {
+function TextInput(props) {
+
+    const [inputValue, setinputValue] = useState("")
+
+    // function inputChange() {
+    //     props.takeInput(inputValue)
+    //     console.log("Im called")
+    // }
+
+    useEffect(() => {
+        if (inputValue === "") {
+            props.catchInput(inputValue, "turnOff")
+        }
+        else {
+            props.catchInput(inputValue, "turnOn")
+        }
+    }, [inputValue])
+
 
     return (
 
         <div className="mainTextBoxHolder" >
             {
-                (type === "regular") ?
+                (props.type === "regular") ?
                     <div className="textBoxHolder regular" >
-                        <input type="text" className="textBox-regular" placeholder={placeholdervalue} />
+                        <input
+                            maxLength={100}
+                            type="text" className="textBox-regular"
+                            placeholder={props.placeholdervalue} value={inputValue}
+                            onChange={(e) => {
+                                setinputValue(e.target.value)
+                            }}
+                        />
                     </div>
                     :
-                    (type === "domain") ?
+                    (props.type === "domain") ?
                         <label className="textBoxHolder domain" >
                             <p className="textBoxDomain" >
-                                {domainname}
+                                {props.domainname}
                             </p>
-                            <input type="text" className="textBox-domain" placeholder={placeholdervalue} />
+                            <input
+                                maxLength={100}
+                                type="text" className="textBox-domain"
+                                placeholder={props.placeholdervalue} value={inputValue}
+                                onChange={(e) => {
+                                    setinputValue(e.target.value)
+                                }}
+                            />
                         </label>
                         :
                         null

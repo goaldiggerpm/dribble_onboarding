@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 // atoms
 
@@ -17,9 +17,50 @@ import MainStepperBar from '../../../molecules/StepperBar/StepperBar.js'
 import MyImage from '../../../../assets/images/person1.png'
 import MyLogo from '../../../../assets/images/eden-logo(xl).png'
 
+// data context
+
+import DribbleContext from '../../../../utilities/DataContext'
 
 
-function OnBoardingForm1() {
+
+function OnBoardingForm1(props) {
+
+    const contextDribble = useContext(DribbleContext);
+
+
+    const [name, setname] = useState("")
+    const [displayName, setdisplayName] = useState("")
+    const [btnDisable, setbtnDisable] = useState(false)
+
+    useEffect(() => {
+        if (displayName === "" || name === "") {
+            setbtnDisable(true)
+        }
+        else {
+            setbtnDisable(false)
+        }
+
+    }, [name, displayName])
+
+
+    function takeInput(data, data2, data3) {
+        // console.log("takeInput", data, data2, data3)
+        // console.log("takeInput ===", name, displayName)
+    }
+
+    function callAction() {
+        contextDribble.setchangeFormTo(2)
+        contextDribble.setmainData({
+            ...contextDribble.mainData,
+            fullName: name,
+            displayName: displayName,
+        })
+    }
+
+    OnBoardingForm1.defaultProps = {
+        action: () => { console.log(null) },
+    }
+
     return (
         <div className="OnBoardingForm1-main-container" >
 
@@ -28,13 +69,11 @@ function OnBoardingForm1() {
                 <MainStepperBar index={1} />
             </div>
             <MainTitleLabel heading={"Welcome! First things first..."} subheading={"You can always change them later."} />
-            <MainInputBox IBoption={false} IBlabelname={"Full name"} IBtype={"regular"} IBplaceholdervalue={"Steve Jobs"} />
-            <MainInputBox IBoption={false} IBlabelname={"Display name"} IBtype={"regular"} IBplaceholdervalue={"Steve"} />
-            <MainButton text={"Create Workspace"} />
+            <MainInputBox IBoption={false} IBlabelname={"Full name"} IBtype={"regular"} IBplaceholdervalue={"Steve Jobs"} takeNewValue={takeInput} setValue={setname} />
+            <MainInputBox IBoption={false} IBlabelname={"Display name"} IBtype={"regular"} IBplaceholdervalue={"Steve"} takeNewValue={takeInput} setValue={setdisplayName} />
+            <MainButton text={"Create Workspace"} action={callAction} disable={btnDisable} />
         </div>
     )
 }
 
 export default OnBoardingForm1
-{/* <MainInputBox IBoption={true} IBlabelname={"Full name"} IBtype={"domain"} IBdomainname={"www.eden.com/"} IBplaceholdervalue={"Full name"} /> */ }
-{/* <MainCardChip icon={MyImage} headline={"For myself"} description={"Write better. Think more clearly. Stay organized"} /> */ }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 // atoms
 
@@ -17,18 +17,53 @@ import CardChipSet from '../../../molecules/CardChipSet/CardChipSet.js'
 import MyImage from '../../../../assets/images/person1.png'
 import MyLogo from '../../../../assets/images/eden-logo(xl).png'
 
+// data context
+
+import DribbleContext from '../../../../utilities/DataContext'
 
 function OnBoardingForm3() {
+
+    const contextDribble = useContext(DribbleContext);
+
+
+    const [btnDisable, setbtnDisable] = useState(false)
+    const [selectedCard, setselectedCard] = useState("")
+
+
+    useEffect(() => {
+        if (selectedCard === "") {
+            setbtnDisable(true)
+        }
+        else {
+            setbtnDisable(false)
+        }
+
+    }, [selectedCard])
+
+
+    function callAction() {
+        contextDribble.setchangeFormTo(4)
+        contextDribble.setmainData({
+            ...contextDribble.mainData,
+            package: selectedCard
+        })
+    }
+
+    OnBoardingForm3.defaultProps = {
+        action: () => { console.log(null) },
+    }
+
+
     return (
         <div className="OnBoardingForm3-main-container" >
 
             <MainLogoBox image={MyLogo} name={"Eden"} />
             <div className="progress-wrapper" >
-                <MainStepperBar index={1} />
+                <MainStepperBar index={3} />
             </div>
             <MainTitleLabel heading={"Welcome! First things first..."} subheading={"You can always change them later."} />
-            <CardChipSet />
-            <MainButton text={"Create Workspace"} />
+            <CardChipSet getCard={setselectedCard} />
+            <MainButton text={"Create Workspace"} action={callAction} disable={btnDisable} />
         </div>
     )
 }

@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react'
 
 import StepperCircle from '../../atoms/StepperCircle/StepperCircle'
 
+/**
+ * StepperBar component (molecule)
+ * @param {int} no: integer to select specified circle i.e 1, 2, 3, 4
+ * @param {function} IBaction: function to run on click of the button
+ * @returns Custom StepperBar with passed properties for creating stepper progress bar
+ */
 function StepperBar({ index }) {
 
     const [mount, setMount] = useState(false)
@@ -13,6 +19,11 @@ function StepperBar({ index }) {
         class4: " "
     })
 
+    /**
+     * changeClassName function 
+     * @param {int} index: integer to select specified circle i.e 1, 2, 3, 4
+     * @returns Function to provide each steppercircle there classname according to there index given
+     */
     const changeClassName = (index) => {
         switch (index) {
             case 1:
@@ -63,6 +74,12 @@ function StepperBar({ index }) {
         }
     }
 
+    /**
+    * useEffect hook 
+    * @param {index} index: integer to select specified circle i.e 1, 2, 3, 4
+    * @dependency {index} 
+    * @returns Its called on each time index is changed
+    */
     useEffect(() => {
         if (!mount) {
             setMount(true);

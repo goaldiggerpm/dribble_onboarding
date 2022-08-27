@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 // organisms 
 
@@ -7,21 +7,37 @@ import OnBoardingForm2 from '../../components/organisms/OnBoardingForms/Form2/On
 import OnBoardingForm3 from '../../components/organisms/OnBoardingForms/Form3/OnBoardingForm3'
 import OnBoardingForm4 from '../../components/organisms/OnBoardingForms/Form4/OnBoardingForm4'
 
+// data context
 
-function Index() {
+import DribbleContext from '../../utilities/DataContext'
 
-    // const [collectedData, setcollectedData] = useState({})
 
-    // function saveData() {
+function Index(props) {
 
-    // }
+    const contextDribble = useContext(DribbleContext);
+
+    console.log(contextDribble.mainData)
+
+
 
     return (
         <div>
-            <OnBoardingForm1 />
-            <OnBoardingForm2 />
-            <OnBoardingForm3 />
-            <OnBoardingForm4 />
+
+            {
+                (contextDribble.changeFormTo === 1) ?
+                    <OnBoardingForm1 />
+                    :
+                    (contextDribble.changeFormTo === 2) ?
+                        <OnBoardingForm2 />
+                        :
+                        (contextDribble.changeFormTo === 3) ?
+                            <OnBoardingForm3 />
+                            :
+                            (contextDribble.changeFormTo === 4) ?
+                                <OnBoardingForm4 />
+                                :
+                                null
+            }
         </div>
     )
 }
