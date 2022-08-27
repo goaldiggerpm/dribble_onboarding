@@ -26,11 +26,11 @@ function OnBoardingForm2() {
 
     const contextDribble = useContext(DribbleContext);
 
-
     const [name, setname] = useState("")
     const [url, seturl] = useState("")
     const [btnDisable, setbtnDisable] = useState(false)
 
+    // to check if any input is empty then disable the button
     useEffect(() => {
         if (url === "" || name === "") {
             setbtnDisable(true)
@@ -41,6 +41,7 @@ function OnBoardingForm2() {
 
     }, [name, url])
 
+    // to pass the collected data into the main state in DataContext
     function callAction() {
         contextDribble.setchangeFormTo(3)
         contextDribble.setmainData({

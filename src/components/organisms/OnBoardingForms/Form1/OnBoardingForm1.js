@@ -27,11 +27,11 @@ function OnBoardingForm1(props) {
 
     const contextDribble = useContext(DribbleContext);
 
-
     const [name, setname] = useState("")
     const [displayName, setdisplayName] = useState("")
     const [btnDisable, setbtnDisable] = useState(false)
 
+    // to check if any input is empty then disable the button
     useEffect(() => {
         if (displayName === "" || name === "") {
             setbtnDisable(true)
@@ -42,12 +42,9 @@ function OnBoardingForm1(props) {
 
     }, [name, displayName])
 
+    function takeInput(data, data2, data3) { "" }
 
-    function takeInput(data, data2, data3) {
-        // console.log("takeInput", data, data2, data3)
-        // console.log("takeInput ===", name, displayName)
-    }
-
+    // to pass the collected data into the main state in DataContext
     function callAction() {
         contextDribble.setchangeFormTo(2)
         contextDribble.setmainData({

@@ -29,7 +29,7 @@ function OnBoardingForm3() {
     const [btnDisable, setbtnDisable] = useState(false)
     const [selectedCard, setselectedCard] = useState("")
 
-
+    // to check if any input is empty then disable the button
     useEffect(() => {
         if (selectedCard === "") {
             setbtnDisable(true)
@@ -40,7 +40,7 @@ function OnBoardingForm3() {
 
     }, [selectedCard])
 
-
+    // to pass the collected data into the main state in DataContext
     function callAction() {
         contextDribble.setchangeFormTo(4)
         contextDribble.setmainData({

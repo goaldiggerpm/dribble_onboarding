@@ -12,11 +12,6 @@ function TextInput(props) {
 
     const [inputValue, setinputValue] = useState("")
 
-    // function inputChange() {
-    //     props.takeInput(inputValue)
-    //     console.log("Im called")
-    // }
-
     useEffect(() => {
         if (inputValue === "") {
             props.catchInput(inputValue, "turnOff")

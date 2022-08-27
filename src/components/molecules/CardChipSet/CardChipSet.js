@@ -19,8 +19,8 @@ import MyImage2 from '../../../assets/images/person4.png'
  */
 function CardChipSet(props) {
 
+    // function to select the card 
     function cardSelection(card) {
-        // console.log("card selectedCard", card)
         props.getCard(card)
     }
 

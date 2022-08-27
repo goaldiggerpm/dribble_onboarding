@@ -17,15 +17,7 @@ import InputText from '../../atoms/TextInput/TextInput'
  */
 export default function InputBox(props) {
 
-
-  const [mount, setmount] = useState(false)
-
-  useEffect(() => {
-    if (mount === false) {
-      setmount(true)
-    }
-  }, [])
-
+  // function to pass the values to HOC
   function getNewValue(val, active) {
     props.takeNewValue(val, props.IBlabelname, active);
     props.setValue(val)
