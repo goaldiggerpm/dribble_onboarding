@@ -63,10 +63,11 @@ function StepperBar({ index }) {
         }
     }
 
-    useEffect((index) => {
+    useEffect(() => {
         if (!mount) {
             setMount(true);
-            changeClassName(index)
+            let no = index;
+            changeClassName(no)
         }
     }, [index, mount]) // eslint-disable-next-line
 
