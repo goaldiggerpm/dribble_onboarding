@@ -16,13 +16,13 @@ function Index(props) {
 
     const contextDribble = useContext(DribbleContext);
 
-    // to check the main data colected
+    // to check the main data collected
     // console.log(contextDribble.mainData)
 
     return (
         <div>
             {/* 
-                making ternary opaertaor to switch between different forms using contexts (contextDribble.changeFormTo)
+                making ternary opertaor to switch between different forms using contexts (contextDribble.changeFormTo)
             */}
             {
                 (contextDribble.changeFormTo === 1) ?
